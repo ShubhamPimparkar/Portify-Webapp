@@ -79,7 +79,7 @@ const EngagementTrendChart = ({
     payload,
   }: {
     active?: boolean;
-    payload?: Array<{ value: number; name: string; dataKey: string }>;
+    payload?: Array<{ value: number; name: string; dataKey: string; color?: string; payload?: { date: string } }>;
   }) => {
     if (active && payload && payload.length > 0) {
       return (
@@ -90,7 +90,9 @@ const EngagementTrendChart = ({
               {entry.value !== null ? `${entry.value}%` : 'N/A'}
             </p>
           ))}
-          <p className="text-xs text-gray-500 mt-1">{payload[0].payload.date}</p>
+          {payload[0]?.payload?.date && (
+            <p className="text-xs text-gray-500 mt-1">{payload[0].payload.date}</p>
+          )}
         </div>
       );
     }

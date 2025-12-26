@@ -5,7 +5,7 @@ import TemplateCard from '../components/TemplateCard';
 import Loader from '../components/Loader';
 
 const PortfolioSettings = () => {
-  const [settings, setSettings] = useState<PortfolioSettingsType | null>(null);
+  const [, setSettings] = useState<PortfolioSettingsType | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);

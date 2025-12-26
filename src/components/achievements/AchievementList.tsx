@@ -27,7 +27,7 @@ const AchievementList = () => {
     achievementId: null,
     achievementTitle: '',
   });
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [, setIsDeleting] = useState(false);
 
   useEffect(() => {
     loadAchievements();

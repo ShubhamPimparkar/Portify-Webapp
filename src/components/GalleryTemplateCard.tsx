@@ -7,7 +7,7 @@ interface GalleryTemplateCardProps {
   onClick: () => void;
 }
 
-const GalleryTemplateCard = ({ name, description, templateKey, isSelected, isSaved, onClick }: GalleryTemplateCardProps) => {
+const GalleryTemplateCard = ({ name, description, templateKey: _templateKey, isSelected, isSaved, onClick }: GalleryTemplateCardProps) => {
   return (
     <button
       type="button"

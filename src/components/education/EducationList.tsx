@@ -22,7 +22,7 @@ const EducationList = () => {
     educationId: null,
     institutionName: '',
   });
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [, setIsDeleting] = useState(false);
 
   useEffect(() => {
     loadEducations();

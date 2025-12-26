@@ -19,7 +19,7 @@ const Projects = () => {
     projectId: null,
     projectTitle: '',
   });
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [, setIsDeleting] = useState(false);
 
   const navigate = useNavigate();
 
