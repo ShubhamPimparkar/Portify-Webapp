@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { trackPortfolioEvent } from '../api/publicAnalytics.api';
 import { AnalyticsEventType } from '../types/analyticsTracking.types';
+import { API_BASE_URL } from '../config/api';
 
 const ENGAGEMENT_THRESHOLD_SECONDS = 30; // User is "engaged" after 30 seconds
 const BOUNCE_THRESHOLD_SECONDS = 5; // User "bounces" if they leave within 5 seconds
@@ -118,7 +119,7 @@ export const usePortfolioTracking = (username: string | undefined) => {
       // 1. User hasn't been marked as engaged
       // 2. User left within bounce threshold
       if (!engagementTrackedRef.current && duration < BOUNCE_THRESHOLD_SECONDS) {
-        const url = `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api'}/public/portfolio/${username}/track`;
+        const url = `${API_BASE_URL}/public/portfolio/${username}/track`;
         const data = JSON.stringify({
           eventType: AnalyticsEventType.BOUNCE,
           durationSeconds: duration,
