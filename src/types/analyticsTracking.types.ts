@@ -1,12 +1,13 @@
 export enum AnalyticsEventType {
   VIEW = 'VIEW',
   ENGAGED = 'ENGAGED',
-  BOUNCE = 'BOUNCE',
+  // BOUNCE is derived server-side, not sent from frontend
 }
 
 export interface AnalyticsTrackingRequest {
   eventType: AnalyticsEventType;
-  durationSeconds: number;
+  durationSeconds?: number;
+  scrollDepth?: number; // Percentage (0-100)
   visitorId?: string;
 }
 
